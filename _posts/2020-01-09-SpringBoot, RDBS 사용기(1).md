@@ -7,14 +7,12 @@ Communication App을 만드는 프로젝트에서 서버를 구현했었다..
 이 프로젝트는 차장님과 페어코딩으로 진행되어서 제대로 서버의 구조를 배울 수 있는 좋은 기회가 될 것 같다!!
 
 ## 현재 프로젝트의 문제점
-- DynamoDB를 사용하기로 결정돼 진행해보니 
-Dynamo는 sorting기능을 구현할 때 복잡성을 피할 수 없게 되어 있는 것을 알았다.
-	 
-**발견과정** : DynamoDB 에서 별도의 index 테이블을 생성하여 정렬하고 기존 content를 Mapping하는 방법을 택하였다.
- 
-likeHash별로 sorting 한 후 그 sorting 된 결과를 원래 content 와 mapping 하는 과정에서 시간이 많이 소요되는 것으로 판단되었다.
+* DynamoDB를 사용하기로 결정되어 진행해보니 Dynamo는 sorting기능을 구현할 때 복잡성을 피할 수 없게 되어 있는 것을 알았다.
+기존 프로젝트는 DynamoDB 에서 별도의 index 테이블을 생성하여 정렬하고 기존 content를 Mapping하는 방법을 택하였는데, likeHash별로 sorting 한 후 그 sorting 된 결과를 원래 content 와 mapping 하는 과정에서 시간이 많이 소요되는 것으로 판단되었다.
+
 * DynamoDB에서 sorting을 사용하기 위해서는 **primary key와 sorting key**의 사용이 불가피한데 다른 기능을 구현할 때 sorting key를 지정한 Table에 접근하려면 저 pk sk 두개의 key가 필요하다. 그래서 sorting key를 따로 저장하는 Table을 구성하여서 key값을 꺼내 온 다음 접근을 해야한다. 
 이 과정이 필요하다고 생각했기 때문에 이 Table이 필요한(content Table이니 거의 모든) 기능을 구현할 때 **복잡성이 추가**된다.
+
 > 결론 : DynamoDB를 사용하지 않는 것이 좋겠다.
 
 
