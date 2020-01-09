@@ -9,7 +9,8 @@ Communication App을 만드는 프로젝트에서 서버를 구현했었다..
 ## 현재 프로젝트의 문제점
 - DynamoDB를 사용하기로 결정돼 진행해보니 
 Dynamo는 sorting기능을 구현할 때 복잡성을 피할 수 없게 되어 있는 것을 알았다.
-	 **발견과정** : DynamoDB 에서 별도의 index 테이블을 생성하여 정렬하고 기존 content를 Mapping하는 방법을 택하였다.
+	 
+**발견과정** : DynamoDB 에서 별도의 index 테이블을 생성하여 정렬하고 기존 content를 Mapping하는 방법을 택하였다.
  ![sorting](https://user-images.githubusercontent.com/47243329/71964991-1e8cdd80-3242-11ea-9986-030e60da2d59.PNG)
 likeHash별로 sorting 한 후 그 sorting 된 결과를 원래 content 와 mapping 하는 과정에서 시간이 많이 소요되는 것으로 판단되었다.
 * DynamoDB에서 sorting을 사용하기 위해서는 **primary key와 sorting key**의 사용이 불가피한데 다른 기능을 구현할 때 sorting key를 지정한 Table에 접근하려면 저 pk sk 두개의 key가 필요하다. 그래서 sorting key를 따로 저장하는 Table을 구성하여서 key값을 꺼내 온 다음 접근을 해야한다. 
