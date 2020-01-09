@@ -1,6 +1,8 @@
-# Serverless 프로젝트 수정사항(SpringBoot, RDBS 사용기)
+# Serverless프로젝트 수정사항(SpringBoot, RDBS 사용기)
+
 **프로젝트 개요**
-DSG 그룹의 Communication App을 만드는 프로젝트에서 서버를 구현하는 역할을 맡게 되었다. 
+
+Communication App을 만드는 프로젝트에서 서버를 구현했었다.. 
 처음 프로젝트 개요는 서버리스로 구현하는 것이어서 lambda와 dynamodb를 사용하였는데 그 것을 보완하는 과정을 포스팅하려고 한다.
 이 프로젝트는 승필 차장님과 페어코딩으로 진행되어서 제대로 서버의 구조를 배울 수 있는 좋은 기회가 될 것 같다!!
 
