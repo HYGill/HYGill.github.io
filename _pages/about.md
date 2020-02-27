@@ -7,10 +7,10 @@ permalink: /about/
 
 ### - 사용 언어
 
- [x] JAVA
- [x] C
- [x] NodeJs
- [x] JavaScript
+- [x] JAVA
+- [x] C
+- [x] NodeJs
+- [x] JavaScript
 
 ----
 
