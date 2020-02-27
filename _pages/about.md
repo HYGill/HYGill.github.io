@@ -5,7 +5,7 @@ author: "gill"
 permalink: /about/
 ---
 
-### - 사용 언어
+### &#128515; 사용 언어 &#128515;
 <br/>
 -  JAVA
 -  C
