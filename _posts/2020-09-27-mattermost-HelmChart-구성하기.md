@@ -22,7 +22,7 @@
 
 
 
-1. {{ .value.~}} 라고 적힌 부분은 value.yaml에 적혀있는 부분이다. 
+1. ```{{ .value.~}}``` 라고 적힌 부분은 value.yaml에 적혀있는 부분이다. 
 
    ``` 
    helm install [] [] --set name=[]
