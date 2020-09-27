@@ -4,7 +4,7 @@
 
 
 
-[메타모스트 helm chart ]: https://github.com/helm/charts/tree/master/stable/mattermost-team-edition	"메타모스트 helm chart"
+MatterMost helm chart : https://github.com/helm/charts/tree/master/stable/mattermost-team-edition
 
 
 
