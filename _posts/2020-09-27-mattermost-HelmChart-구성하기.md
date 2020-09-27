@@ -28,7 +28,7 @@
    helm install [] [] --set name=[]
    ```
 
-   이처럼 install 할 때 set명령어를 통해 원하는 대로 주입이 가능하다. 그렇기 때문에 1번 조건을 해결하기 위해 Jenkins job에 변수로 처리하여 사용자마다 다른 namespce, app name, url을 주도록 하였다.
+      이처럼 install 할 때 set명령어를 통해 원하는 대로 주입이 가능하다. 그렇기 때문에 1번 조건을 해결하기 위해 Jenkins job에 변수로 처리하여 사용자마다 다른 namespce, app name, url을 주도록 하였다.
 
 2. Ingress annotation중에는 nginx.conf에 직접 써주는 것과 전역 선언되는 것 두가지 타입이 있다.
 
