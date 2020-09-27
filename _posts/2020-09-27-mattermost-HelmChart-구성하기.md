@@ -35,12 +35,12 @@
    진짜 이것땜에 삼일 삽질했다. 다들 공식문서를 제발 꼭 보자
 
    ```shell
-   		nginx.org/server-snippets: |
+   nginx.org/server-snippets: |
          location ~ /api/v[0-9]+/(users/)?websocket$ {
            proxy_set_header Upgrade $http_upgrade;
            proxy_set_header Connection "upgrade";
            proxy_pass {{ .Values.proxyPass }};
-         }
+   }
    ```
 
    
