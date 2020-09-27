@@ -4,7 +4,9 @@
 
 
 
-[메타모스트 helm chart ]: https://github.com/helm/charts/tree/master/stable/mattermost-team-edition
+[메타모스트 helm chart ]: https://github.com/helm/charts/tree/master/stable/mattermost-team-edition	"메타모스트 helm chart"
+
+
 
 우선 mattermost 기본 helm chart를 다운받는다. 기본 제공하는대로 사용한다면 Readme에 있는 install 처럼 진행하면 된다.
 
