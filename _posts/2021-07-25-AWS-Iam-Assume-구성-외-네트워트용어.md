@@ -2,7 +2,7 @@
 
 : AWS 리소스에 대한 액세스를 안전하게 제어할 수 있는 웹 서비스. IAM을 사용하여 리소스를 사용하도록 인증(로그인) 및 권한 부여(권한 있음)된 대상을 제어하는 서비스
 
-![img](https://lh6.googleusercontent.com/KD6nFPcL7Oc7d3Hfo-HNlPGiAbLmZpOLczcdigpRvMILKT1hEXoyx97CiQIWpFX9Z9nVHgLdniMGzJ84CwvOcis1mYIWGHCdZd1G8vpCpQayjTWkLo3bUt6fDnr1QHMCINhh53lU)
+![img](https://user-images.githubusercontent.com/47243329/128975212-9959c905-8c61-42eb-b893-3bd3113e99ce.PNG)
 
 - **RBAC (Role-Based Access Control)**: Group에다가 Role을 바로 주는 대신에 권한의 논리적 집합으로서 Role을 만들고 Role을 Group이나 User에 연결합니다. 즉 Group은 UserGroup으로 주로 사용하고, Role은 권한의 Group으로 사용하는 것입니다. (간접 계층 추가)
 
