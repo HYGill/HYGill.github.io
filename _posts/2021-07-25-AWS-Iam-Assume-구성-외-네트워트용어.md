@@ -52,7 +52,7 @@
 
 ### 과제 진행 순서
 
-1) A(liivAgile)의 aws space에 B(developer)가 instance 설치
+1) A의 aws space에 B가 instance 설치
 
 - A Role 생성 : EC2 접근, 생성, VPC, Subnet, RouteTable, InternetGateway, SecurityGroup 생성 권한부여
 
