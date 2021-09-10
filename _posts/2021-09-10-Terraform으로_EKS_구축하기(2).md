@@ -51,7 +51,8 @@ module "eks" {
 }
 ```
 
-노드 그룹이 자꾸 안 생성되어서 도대체 뭘까했는데 **cluster_endpoint_public_access_cidrs** 설정을 안해주었었다. examples 폴더에서 basic 예시에는 없는데 까보니 설정할 수 있는 값이어서 넣어주었음.. 
+노드 그룹이 자꾸 안 생성되어서 도대체 뭘까했는데 **cluster_endpoint_public_access_cidrs** 설정을 안해주었었다.
+examples 폴더에서 basic 예시에는 없는데 까보니 설정할 수 있는 값이어서 넣어주었음.. 
 
 Bastion없이 내 PC에서 직접 접근할 것이기 때문에 PC IP랑 nat gateway의 ip를 넣어주었다. 
 
@@ -62,6 +63,7 @@ Bastion없이 내 PC에서 직접 접근할 것이기 때문에 PC IP랑 nat gat
 ------
 
 베스쳔 있는 eks: https://github.com/HYGill/sava/tree/main/terraform-bastion-eks
+
 instance만들어서 cluster_endpoint_public_access_cidrs에 인스턴스 ip 넣어주면된다.
 
 베스쳔 없는 eks: https://github.com/HYGill/sava/tree/main/terraform-eks
