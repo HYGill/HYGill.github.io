@@ -59,6 +59,7 @@ Bastion없이 내 PC에서 직접 접근할 것이기 때문에 PC IP랑 nat gat
 
 생성 성공~
 
-[베스쳔 있는 eks]: https://github.com/HYGill/sava/tree/main/terraform-bastion-eks	"베스쳔 있는 eks" : 있는거는 instance만들어서 cluster_endpoint_public_access_cidrs에 인스턴스 ip 넣어주면된다.
+[베스쳔 있는 eks]: https://github.com/HYGill/sava/tree/main/terraform-bastion-eks	"베스쳔 있는 eks" 
+instance만들어서 cluster_endpoint_public_access_cidrs에 인스턴스 ip 넣어주면된다.
 
 [베스쳔 없는 eks]: https://github.com/HYGill/sava/tree/main/terraform-eks	"베스쳔 없는 eks"
