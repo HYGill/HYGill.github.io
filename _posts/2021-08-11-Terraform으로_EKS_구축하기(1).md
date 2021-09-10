@@ -154,7 +154,7 @@ spec:
 	   port: 80
 	   targetPort: 3000
 ```
-=> ALB로 로드밸런서 생성
+=> CLB로 로드밸런서 생성
 
 [backend Service]
 
