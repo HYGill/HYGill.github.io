@@ -110,9 +110,9 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecsdemo-nodejs
+  name: ecsdemo-crystal
   labels:
-    app: ecsdemo-nodejs
+    app: ecsdemo-crystal
   namespace: default
 spec:
   replicas: 1
@@ -136,6 +136,44 @@ spec:
         ports:
         - containerPort: 3000
           protocol: TCP
+```
+
+[frontend deployment]
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecsdemo-frontend
+  labels:
+    app: ecsdemo-frontend
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecsdemo-frontend
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ecsdemo-frontend
+    spec:
+      containers:
+      - image: brentley/ecsdemo-frontend:latest
+        imagePullPolicy: Always
+        name: ecsdemo-frontend
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        env:
+        - name: CRYSTAL_URL
+          value: "http://ecsdemo-crystal.default.svc.cluster.local/crystal"
+        - name: NODEJS_URL
+          value: "http://ecsdemo-nodejs.default.svc.cluster.local/"
 ```
 
 [frontend Service]
@@ -162,27 +200,57 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-	name: ecsdemo-nodejs
+  name: ecsdemo-nodejs
 spec:
-	selector:
-		app: ecsdemo-nodejs
-	ports:
-	 - protocol: TCP
-	   port: 80
-	   targetPort: 3000
+  selector:
+    app: ecsdemo-nodejs
+  ports:
+   -  protocol: TCP
+      port: 80
+      targetPort: 3000
 ```
+```
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecsdemo-crystal
+spec:
+  selector:
+    app: ecsdemo-crystal
+  ports:
+   -  protocol: TCP
+      port: 80
+      targetPort: 3000
+
+```
+
+[frontend Service]
 ```
 apiVersion: v1
 kind: Service
 metadata:
-	name: ecsdemo-crystal
+  name: ecsdemo-frontend
 spec:
-	selector:
-		app: ecsdemo-crystal
-	ports:
-	 - protocol: TCP
-	   port: 80
-	   targetPort: 3000
+  selector:
+    app: ecsdemo-frontend
+  type: LoadBalancer
+  ports:
+   -  protocol: TCP
+      port: 80
+      targetPort: 3000
+```
+
+[frontend ingress]
+```
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ecsdemo-frontend
+spec:
+  backend:
+    serviceName: ecsdemo-frontend
+    servicePort: 80
 ```
 
 - service 종류를 선택하지 않으면 default는 clusterIP(클러스터 내부 IP를 서비스로 노출. 클러스터 내부에서만 서비스에 접근 가능)
