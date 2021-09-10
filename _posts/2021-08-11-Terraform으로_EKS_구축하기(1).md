@@ -68,6 +68,8 @@ Amazon Elastic Kubernetes Service(Amazon EKS)는 AWS 클라우드 또는 온프�
 
 ![label, nodeSelector](https://user-images.githubusercontent.com/47243329/128975391-3d0e783b-a48a-42b2-93fa-cf3730fa29ab.PNG)
 
+구조는 두개의 Backend(crystal, nodeJs)와 하나의 Frontend(Ruby)로 구성된다
+
 [nodejs deployment]
 
 ```
@@ -102,6 +104,40 @@ spec:
           protocol: TCP
 ```
 
+[crystal deployment]
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecsdemo-nodejs
+  labels:
+    app: ecsdemo-nodejs
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecsdemo-crystal
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ecsdemo-nodejs
+    spec:
+      containers:
+      - image: brentley/ecsdemo-crystal:latest
+        imagePullPolicy: Always
+        name: ecsdemo-crystal
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+```
+
 [frontend Service]
 
 ```
@@ -118,6 +154,7 @@ spec:
 	   port: 80
 	   targetPort: 3000
 ```
+=> ALB로 로드밸런서 생성
 
 [backend Service]
 
