@@ -127,7 +127,7 @@ spec:
   template:
     metadata:
       labels:
-        app: ecsdemo-nodejs
+        app: ecsdemo-crystal
     spec:
       containers:
       - image: brentley/ecsdemo-crystal:latest
