@@ -58,16 +58,18 @@ private subnet에 worker node를 넣는 구조로 모듈 생성. subnet을 두�
 **cluster_endpoint_public_access_cidrs** 설정을 안해주었었다.
 examples 폴더에서 basic 예시에는 없는데 까보니 설정할 수 있는 값이어서 넣어주었음.. 
 
-Bastion없이 내 PC에서 직접 접근할 것이기 때문에 PC IP랑 nat gateway의 ip를 넣어주었다. 
-
-
+Nat Gateway의 public ip는 private subnet에 설치된 worker node가 aws안에 있는 API Server에게 통신을 할 때에는 Nat Gateway를 거쳐야하기 때문에 cluster에서 접근을 허용해줘야한다.
 
 생성 성공~
+
+Bastion에서 eks에 접근하기 위해서는 두가지를 설치해야된다
+1. aws-iam-authenticator (https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
+2. kubectl (https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+
+두가지를 설치하고 cluster와 통신할 수 있게 config 설정해주면 끝!(https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/create-kubeconfig.html)
 
 ------
 
 베스쳔 있는 eks: https://github.com/HYGill/sava/tree/main/terraform-bastion-eks
-
-instance만들어서 cluster_endpoint_public_access_cidrs에 인스턴스 ip 넣어주면된다.
 
 베스쳔 없는 eks: https://github.com/HYGill/sava/tree/main/terraform-eks
