@@ -253,7 +253,7 @@ spec:
     servicePort: 80
 ```
 
-```
+---
 ### RBAC(Role-based access control)
 
 : K8s에서 API Access Control 하는 방식 중 하나. 조직 내 개별 사용자의 역할에 따라 컴퓨터 또는 네트워크 리소스에 대한 액세스를 규제하는 방법
