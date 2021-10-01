@@ -253,6 +253,15 @@ spec:
     servicePort: 80
 ```
 
+```
+### RBAC(Role-based access control)
+
+: K8s에서 API Access Control 하는 방식 중 하나. 조직 내 개별 사용자의 역할에 따라 컴퓨터 또는 네트워크 리소스에 대한 액세스를 규제하는 방법
+
+- EKS에서 configmap에 권한 추가하는 방법
+  - https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/add-user-role.html
+  - https://aws.amazon.com/ko/premiumsupport/knowledge-center/eks-kubernetes-object-access-error/
+
 - service 종류를 선택하지 않으면 default는 clusterIP(클러스터 내부 IP를 서비스로 노출. 클러스터 내부에서만 서비스에 접근 가능)
 - 이전에 LB를 생성하지않은 AWS 계정인 경우 AWSServiceRoleForElasticLoadBalancing을 추가한다
 
