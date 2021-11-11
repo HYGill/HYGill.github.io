@@ -22,9 +22,9 @@ Unit Test 경험밖에 없어서 나중에 API Test도 꼭 해보고싶다
 
      - Newman, Postman, Jenkins로 API 테스트 자동화
 
-       https://co-de.tistory.com/19
+       [참고자료1](https://co-de.tistory.com/19)
        
-       https://medium.com/dtevangelist/devops-jenkins-postman-newman%EC%9C%BC%EB%A1%9C-api-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%99%94%ED%95%98%EA%B8%B0-f08a155a949c
+       [참고자료2](https://medium.com/dtevangelist/devops-jenkins-postman-newman%EC%9C%BC%EB%A1%9C-api-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%99%94%ED%95%98%EA%B8%B0-f08a155a949c)
 
        -> Postman에서 API 작성 후 export -> 개발 소스에 json 파일 업로드 -> newman 설치 후 pipeline에서 newman run (--reporters : 결과를 리턴하는 방식 지정) -> 결과값 확인
        
