@@ -66,7 +66,8 @@ Nat Gateway의 public ip는 private subnet에 설치된 worker node가 aws안에
 
 Bastion에서 eks에 접근하기 위해서는 두가지를 설치해야된다
 1. aws-iam-authenticator (https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
-2. kubectl (https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+2. [aws-iam-authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
+3. kubectl (https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 
 두가지를 설치하고 cluster와 통신할 수 있게 config 설정해주면 끝!(https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/create-kubeconfig.html)
 
