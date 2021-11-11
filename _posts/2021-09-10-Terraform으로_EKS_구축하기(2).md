@@ -72,6 +72,6 @@ Bastion에서 eks에 접근하기 위해서는 두가지를 설치해야된다
 
 ------
 
-[베스쳔 있는 eks 소스]https://github.com/HYGill/sava/tree/main/terraform-bastion-eks
+[베스쳔 있는 eks 소스](https://github.com/HYGill/sava/tree/main/terraform-bastion-eks)
 
-[베스쳔 없는 eks 소스]https://github.com/HYGill/sava/tree/main/terraform-eks
+[베스쳔 없는 eks 소스](https://github.com/HYGill/sava/tree/main/terraform-eks)
