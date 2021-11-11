@@ -85,7 +85,7 @@
    우선 chunk의 유효성이 어디서부터 시작되는지 몰라서 나온 의문
 
    ![batch](https://user-images.githubusercontent.com/47243329/139216748-5d18d88f-0acb-4ce1-b53f-9a9f40939635.png)
-   [출처 : https://t1.daumcdn.net/cfile/tistory/999A91385BCE63BC07]
+   [출처](https://t1.daumcdn.net/cfile/tistory/999A91385BCE63BC07)
 
    그것은 바로바로 Read에서부터~ 눈물줄줄..쨋던 그렇다..max값이 다음 chunk단위가 시작될때 초기화된다!
    
