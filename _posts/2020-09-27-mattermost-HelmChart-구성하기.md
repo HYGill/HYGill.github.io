@@ -3,7 +3,7 @@
 - 개요 : 메타모스트 Helm Chart와 Jenkins Job을 작성하여 사용자가 웹에서 필요한 정보를 입력하면 자동 설치가 되는 부분을 진행하게 되었다.
 
 
-MatterMost helm chart : https://github.com/helm/charts/tree/master/stable/mattermost-team-edition
+[MatterMost helm chart 저장소](https://github.com/helm/charts/tree/master/stable/mattermost-team-edition)
 
 
 
@@ -46,7 +46,7 @@ MatterMost helm chart : https://github.com/helm/charts/tree/master/stable/matter
 
    
 
-   nginx 관련 helm 문법 : https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-annotations/
+   [nginx 관련 helm 문법](https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-annotations/)
 
 
    여기에 보면 server-snippets와 location-snippets가 써져있는데 둘다 써본 결과 server는 그냥 쌩으로 저렇게 넣어준다. location은 이미 있는 곳에 추가해주는 것 같다. 나는 프록시 pass를 그냥 추가해줘야하는 것이라서 server를 써서 저렇게 그대로 넣었다. 
@@ -56,7 +56,7 @@ MatterMost helm chart : https://github.com/helm/charts/tree/master/stable/matter
    **websocket upgrade가 되지 않는 오류를 만났기 때문**
 
 
-   Proxy pass 추가 내용: https://docs.mattermost.com/install/config-proxy-nginx.html
+   [Proxy pass 추가 내용](https://docs.mattermost.com/install/config-proxy-nginx.html)
 
    메타모스트가 친절하게 내용을 알려줬는데 이거 넣는 방법을 몰라서 계속..계속..삽질했다. 이거 제대로 넣으니까 바로뜨더라~ 눈물이 좀 나네
 
