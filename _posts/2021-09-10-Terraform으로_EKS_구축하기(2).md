@@ -65,14 +65,13 @@ Nat Gateway의 public ip는 private subnet에 설치된 worker node가 aws안에
 생성 성공~
 
 Bastion에서 eks에 접근하기 위해서는 두가지를 설치해야된다
-1. aws-iam-authenticator (https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
-2. [aws-iam-authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
-3. kubectl (https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+1. [aws-iam-authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
+2. [kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 
-두가지를 설치하고 cluster와 통신할 수 있게 config 설정해주면 끝!(https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/create-kubeconfig.html)
+두가지를 설치하고 cluster와 통신할 수 있게 [config 설정](https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/create-kubeconfig.html)해주면 끝!
 
 ------
 
-베스쳔 있는 eks: https://github.com/HYGill/sava/tree/main/terraform-bastion-eks
+[베스쳔 있는 eks 소스]https://github.com/HYGill/sava/tree/main/terraform-bastion-eks
 
-베스쳔 없는 eks: https://github.com/HYGill/sava/tree/main/terraform-eks
+[베스쳔 없는 eks 소스]https://github.com/HYGill/sava/tree/main/terraform-eks
