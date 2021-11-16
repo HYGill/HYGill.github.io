@@ -219,14 +219,46 @@ spec:
 
 
 ```yaml
-#service.yamlapiVersion: v1kind: Servicemetadata:  name: nginx-service  namespace: testspec:  selector:    app: nginx  ports:    - port: 8080 #  Cluster 내부에서 사용할 Service 객체의 포트      targetPort: 80 # Service객체로 전달된 요청을 Pod(deployment)로 전달할때 사용하는 포트      protocol: TCP   
+#service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: test
+spec:
+  selector:
+    app: nginx
+  ports:
+    - port: 8080 #  Cluster 내부에서 사용할 Service 객체의 포트
+      targetPort: 80 # Service객체로 전달된 요청을 Pod(deployment)로 전달할때 사용하는 포트
+      protocol: TCP   
 ```
 
 
 
 ```yaml
-#ingress.yamlapiVersion: extensions/v1beta1kind: Ingressmetadata:  name: nginx-ingress  namespace: test  annotations:  	# 어떤 인그레스 컨트롤러를 사용하는지 표시    kubernetes.io/ingress.class: nginx    # 백엔드 서비스의 노출된 URL이 수신 규칙의 지정된 경로와 다를 시 서비스에서 예상하는 경로로 설정하기 위한 annotations    # nginx.ingress.kubernetes.io/rewrite-target: /spec:  rules:  - host: {hostDomain}    http:      paths:      - path: /        backend:          serviceName: nginx-service          servicePort: 8080
+#ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: test
+  annotations:
+  	# 어떤 인그레스 컨트롤러를 사용하는지 표시
+    kubernetes.io/ingress.class: nginx
+    # 백엔드 서비스의 노출된 URL이 수신 규칙의 지정된 경로와 다를 시 서비스에서 예상하는 경로로 설정하기 위한 annotations
+    # nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: {hostDomain}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-service
+          servicePort: 8080
 ```
+
 
 
 
