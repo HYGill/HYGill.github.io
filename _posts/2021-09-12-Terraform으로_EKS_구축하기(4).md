@@ -109,10 +109,6 @@
   Node-Selectors:  <none>
   ```
 
-
-
-### Nginx 설치
-
 nginx가 잘 띄워져있는지 확인해보자
 
 - worker node용 instance에 연결되어있는 보안그룹
