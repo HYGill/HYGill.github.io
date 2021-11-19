@@ -32,8 +32,8 @@
 ### Istio 설치
 
 - Istio 란 ?  서비스메시 툴
+![istio구조](https://user-images.githubusercontent.com/47243329/142575922-75157c5d-6494-42a7-90b6-12f7b7132a26.PNG)
 
-![istio구조](C:\Users\superuser\Downloads\sava\istio구조.PNG)
 
 > 배포된 모든 애플리케이션과 함께 프록시 sidecar를 추가하여 Istio를 사용하면 애플리케이션 트래픽 관리, 강력한 보안 기능을 네트워크에 프로그래밍 가능함. Istio는 Pod에 envoy 를 sidecar 패턴으로 삽입하여, 트래픽을 컨트롤 하는 구조
 
