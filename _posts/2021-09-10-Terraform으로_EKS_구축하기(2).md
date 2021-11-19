@@ -6,8 +6,6 @@
 2. Kubernetes 란
 3. EKS workshop을 통해 실습
 4. **Terraform 작성**
-5. Istio 설치
-6. Test Application 올린 후 Domain과 API 연결
 
 ------
 
