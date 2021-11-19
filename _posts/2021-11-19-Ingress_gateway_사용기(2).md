@@ -167,7 +167,6 @@ spec:
 
 nodePort service 삭제한 후 다시 저 yaml으로 apply하면 aws에 nlb가 생긴 후에 연결된다
 
-![nlb성공](C:\Users\superuser\Downloads\sava\nlb성공.PNG)
 
 ### Nginx Ingress Controller
 
