@@ -29,7 +29,7 @@
 
 
 
-### Istio 설치
+### Istio 사용하기
 
 - Istio 란 ?  서비스메시 툴
 ![istio구조](https://user-images.githubusercontent.com/47243329/142575922-75157c5d-6494-42a7-90b6-12f7b7132a26.PNG)
