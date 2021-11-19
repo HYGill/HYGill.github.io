@@ -48,7 +48,7 @@
 
 
 
-- **istio 설치**
+- **istio 설치**(설치시 alb가 아닌 다른 lb를 사용할 경우 하단 참고)
 
   ```bash
   #istioctl 설치
@@ -96,7 +96,16 @@
   # 배포를 수동으로 삽입하려면 istioctl kube-inject
   % kubectl label namespace istio istio-injection=enabled
   ```
-  
+
+  nginx를 띄워서 istio와 연결하여보자!
+
+  연결되는 과정은
+
+  - **client** -> **loadbalancer** -> **istioGateway** -> **virtualService** -> **service** -> **pod** 로 연결된다.
+
+    위에 injection처리를 하였기 때문에 namespace istio에 설치되는 pod는 istioGateway에 종속되게 된다.
+
+
   ```yaml
   apiVersion: apps/v1
   kind: Deployment
@@ -121,7 +130,7 @@
           ports:
           - containerPort: 80
   ```
-  
+
   ```yaml
   apiVersion: v1
   kind: Service
@@ -141,7 +150,7 @@
     selector:
       app: nginx
   ```
-  
+
   ```yaml
   # 들어온 트래픽을 서비스로 라우팅
   apiVersion: networking.istio.io/v1alpha3
@@ -165,7 +174,7 @@
           port:
             number: 8080
   ```
-  
+
   ```yaml
   apiVersion: networking.istio.io/v1alpha3
   kind: Gateway
@@ -183,12 +192,12 @@
       hosts:
       - "*"
   ```
-  
+
    -  Virtual Service 의 http/match/url
       - `exact: "value"` for exact string match
       - `prefix: "value"` for prefix-based match
       - `regex: "value"` for RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).
-  
+
 - 설치 시 nlb로 변경하는 방법
 
   ```yaml
@@ -227,5 +236,4 @@
   echo 'alias k=kubectl' >>~/.bash_profile
   echo 'complete -F __start_kubectl k' >>~/.bash_profile
   ```
-
 
