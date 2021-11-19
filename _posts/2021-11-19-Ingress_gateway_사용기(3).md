@@ -83,7 +83,6 @@
 
     위에 injection처리를 하였기 때문에 namespace istio에 설치되는 pod는 istioGateway에 종속되게 된다.
 
-
   ```yaml
 apiVersion: apps/v1
 kind: Deployment
