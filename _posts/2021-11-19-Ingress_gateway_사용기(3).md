@@ -191,6 +191,26 @@ spec:
   ```
 
   설치시 파일을 바꿔주는 것이 필요하다.
+  
+**Kiali 설치**
+
+: Istio를 통해 서비스매쉬를 구성하고 이를 모니터링할 수 있는 툴
+
+```bash
+$ kubectl apply -f samples/addons
+$ kubectl rollout status deployment/kiali -n istio-system
+$ istioctl dashboard kiali
+```
+
+이렇게 설치하면 (test이기 때문에 demo template에 있는 설치법을 따라하였음) localhost:20001을 통해 확인할 수 있다.
+
+현재 서비스는 ubuntu bastion에서 eks에 접근하는 것이기 때문에 localhost에서 확인이 불가하다. 확인하고 싶다면 local terminal에서 cluster 접근 후 세번째 명령어로 띄우시길!
+
+> **Port Forwarding** 
+>
+> - 원격 컴퓨터가 근거리 통신망(LAN) 내에 위치한 특정 컴퓨터나 서비스에 연결할 수 있게 한다
+> - 컴퓨터 네트워크에서 패킷이 라우터나 방화벽과 같은 네트워크 게이트웨이를 가로지르는 동안 하나의 IP 주소와 포트번호 결합의 통신요청을 다른 곳으로 넘겨주는 네트워크 주소 변환(NAT)의 응용.
+> - 게이트웨이의 반대쪽에 위치한 호스트에 대한 서비스를 생성하기 위해 흔히 사용되며, 통신하는 목적지 IP 주소와 포트 번호를 내부 호스트에 다시 매핑함으로써 이루어진다.
 
 ------
 
