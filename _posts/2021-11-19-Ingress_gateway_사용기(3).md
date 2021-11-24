@@ -236,7 +236,7 @@ $ istioctl dashboard kiali
 
 ### 모니터링 툴
 
-- **Kiali **: 서비스 메시의 구조를 이해하기 용이한 툴(네트워크 시각화)
+- **Kiali ** : 서비스 메시의 구조를 이해하기 용이한 툴(네트워크 시각화)
 
   <img width="1128" alt="kiali" src="https://user-images.githubusercontent.com/47243329/143179124-2c40ed56-d25a-4d01-a990-9ad54e3e52f4.png">
 
