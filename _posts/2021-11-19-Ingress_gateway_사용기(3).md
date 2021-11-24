@@ -214,3 +214,17 @@ spec:
   echo 'alias k=kubectl' >>~/.bash_profileecho 'complete -F __start_kubectl k' >>~/.bash_profile
   ```
 
+### 모니터링 툴
+
+- **Kiali **: 서비스 메시의 구조를 이해하기 용이한 툴(네트워크 시각화)
+
+  <img width="1128" alt="kiali" src="https://user-images.githubusercontent.com/47243329/143179124-2c40ed56-d25a-4d01-a990-9ad54e3e52f4.png">
+
+- **Prometheus** : 지정된 간격으로 구성된 대상에서 매트릭을 수집하고, 규칙 표현식을 평가하고, 결과를 표시하고, 일부 조건이 참인 것으로 관찰되는 경우 경고를 트리거(리소스 모니터링)
+
+  ![prometeus](https://user-images.githubusercontent.com/47243329/143179090-078aecf5-cad8-408f-ad79-0e9508025384.png)
+
+- **Grafana** : 오픈소스 시각화 도구. prometheus와 함께 사용한다면 데이터를 시각화하여 보여준다.
+
+  ![grafana](https://user-images.githubusercontent.com/47243329/143179029-a2dc899e-a583-4488-9b5d-d03c2bcccc55.PNG)
+
