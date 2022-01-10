@@ -8,7 +8,8 @@
 
 #### 수정 부분 
 
-1) deployment.yaml
+1. deployment.yaml
+   
    values.yaml에서 제공하는 database_type에 mysql이 없어서 직접 String으로 넣었다. 
    만일 postgresql이나 mariadb를 사용한다면 안고치고 values.yaml에서 REDMINE_DATABASE_VALUE만 바꾸면 된다!
 
