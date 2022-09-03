@@ -15,4 +15,5 @@ permalink: /about/
 
 `java` `SpringBoot` `JPA` `MySQL` `K8S`  `Docker` `AWS`
 
-## 새로운 것에 가슴 뛰는 개발자! 성장기를 기록하려고 합니다
+
+## 은퇴하기 하루 전까지 멋진 개발자로 남고 싶어서 공부하는 사람
