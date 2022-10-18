@@ -42,27 +42,27 @@
 
      <노드의 종류>
 
-     1. **[Master-eligible node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#master-node)**
+     1. [Master-eligible node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#master-node)
 
         클러스터를 제어하는 마스터노드
 
-     2. **[Data node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#data-node)**
+     2. [Data node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#data-node)
 
         데이터 노드는 데이터를 보유하고 CRUD, 검색 및 집계와 같은 데이터 관련 작업을 수행
 
-     3. **[Ingest node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#node-ingest-node)**
+     3. [Ingest node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#node-ingest-node)
 
         수집 노드는 인덱싱 전에 문서를 변환하고 강화하기 위해 수집 파이프라인 을 문서에 적용. master나 data role이 없는 노드를 선정하는 것이 좋다
 
-     4. **[Remote-eligible node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#remote-node)**
+     4. [Remote-eligible node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#remote-node)
 
         원격 클라이언트로 작동할 수 있는 역할 이 있는 노드
 
-     5. **[Machine learning node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#ml-node)**
+     5. [Machine learning node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#ml-node)
 
         기계 학습 기능을 사용하려면 클러스터에 기계 학습 노드가 하나 이상 있어야함
 
-     6. **[Transform node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#transform-node)**
+     6. [Transform node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#transform-node)
 
         데이터변환 노드
 
