@@ -109,14 +109,14 @@ curl --cacert http_ca.crt -u elastic https://localhost:9200
 ```shell
 -- elasticSearch 실행 확인
 
-gillhaeyoung@gilhyeyeong-ui-MacBookPro ~ % docker ps
+example@host ~ % docker ps
 CONTAINER ID   IMAGE                                                 COMMAND                  CREATED         STATUS         PORTS                                            NAMES
 1cb5460a7ba5   docker.elastic.co/elasticsearch/elasticsearch:8.4.3   "/bin/tini -- /usr/l…"   6 minutes ago   Up 6 minutes   0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp   es01
-gillhaeyoung@gilhyeyeong-ui-MacBookPro ~ % curl -XGet http://localhost:9200/_cluster/health?pretty=true
+example@host ~ % curl -XGet http://localhost:9200/_cluster/health?pretty=true
 
 -- elasticSearch 설정 확인
 
-gillhaeyoung@gilhyeyeong-ui-MacBookPro ~ % docker exec -i -t es01 cat /usr/share/elasticsearch/config/elasticsearch.yml
+example@host ~ % docker exec -i -t es01 cat /usr/share/elasticsearch/config/elasticsearch.yml
 cluster.name: "docker-cluster"
 network.host: 0.0.0.0
 ```
@@ -145,7 +145,7 @@ Password for the elastic user (reset with `bin/elasticsearch-reset-password -u e
 데이터 하나만 POST, GET 실습만 진행해보기로 결정!
 
 ```shell
-gillhaeyoung@gilhyeyeong-ui-MacBookPro ~ % curl -X POST "localhost:9200/customer/_doc/1?pretty" -H 'Content-Type: application/json' -d'
+example@host ~ % curl -X POST "localhost:9200/customer/_doc/1?pretty" -H 'Content-Type: application/json' -d'
 {
   "firstname": "Jennifer",
   "lastname": "Walters"
@@ -180,7 +180,7 @@ cluster.initial_master_nodes: ["1cb5460a7ba5"]
 
 이렇게 확인된다. 컨테이너 안에 들어가서 수정하려고했으나 vi가 안깔려있는 container였다 .. docker를 올릴때 설정하는 것이 좋겠다고 생각이 들었다. 찾아보니 공식 페이지에 docker-compose가 있었다. 한번에 할수있는 파일이 있었잖아 ?
 
-근데 여러개의 노드를 만드는것같아서 우선 es01만 사용할수있게 수정한 후 실행시켰다.
+근데 여러개의 노드를 만드는것같아서 우선 ssl을 false로 바꾸고 인증서 부분을 삭제한 후 es01만 사용할수있게 수정하고 실행시켰다.
 
 ```yaml
 -- docker-compose.yaml
@@ -246,10 +246,10 @@ volumes:
 
 ```shell
 -- 실행
-gillhaeyoung@gilhyeyeong-ui-MacBookPro elasticSearch % docker-compose up -d
+example@host elasticSearch % docker-compose up -d
 
 -- 확인
-gillhaeyoung@gilhyeyeong-ui-MacBookPro elasticSearch % docker ps
+example@host elasticSearch % docker ps
 CONTAINER ID   IMAGE                                                 COMMAND                  CREATED              STATUS              PORTS                              NAMES
 2e60d7be03c5   docker.elastic.co/kibana/kibana:8.4.3                 "/bin/tini -- /usr/l…"   About a minute ago   Up About a minute   0.0.0.0:5601->5601/tcp             elasticsearch_kibana_1
 2d6c6ef27579   docker.elastic.co/elasticsearch/elasticsearch:8.4.3   "/bin/tini -- /usr/l…"   About a minute ago   Up About a minute   0.0.0.0:9200->9200/tcp, 9300/tcp   elasticsearch_es01_1
@@ -258,7 +258,7 @@ CONTAINER ID   IMAGE                                                 COMMAND    
 잘 실행된것을 확인하였으니 다시 실습을 해보았다!
 
 ```shell
-gillhaeyoung@gilhyeyeong-ui-MacBookPro elasticSearch % curl -X POST "localhost:9200/customer/_doc/1?pretty" -H 'Content-Type: application/json' -d'
+example@host elasticSearch % curl -X POST "localhost:9200/customer/_doc/1?pretty" -H 'Content-Type: application/json' -d'
 {
   "firstname": "Jennifer",
   "lastname": "Walters"
@@ -277,7 +277,8 @@ gillhaeyoung@gilhyeyeong-ui-MacBookPro elasticSearch % curl -X POST "localhost:9
   "_seq_no" : 0,
   "_primary_term" : 1
 }
-gillhaeyoung@gilhyeyeong-ui-MacBookPro elasticSearch % curl -X GET "localhost:9200/customer/_doc/1?pretty"
+
+example@host elasticSearch % curl -X GET "localhost:9200/customer/_doc/1?pretty"
 
 {
   "_index" : "customer",
