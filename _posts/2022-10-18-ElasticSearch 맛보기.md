@@ -40,7 +40,7 @@
 
   2. Node : Elasticsearch를 구성하는 하나의 단위 프로세스
 
-     <노드의 종류>
+     **노드의 종류**
 
      1. [Master-eligible node](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#master-node)
 
