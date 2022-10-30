@@ -19,7 +19,7 @@
 
     -> 샤드 : 루씬 검색 쓰레드, 노드 : Elasticsearch 실행 프로세스
 
-![클러스터 구조](/Users/gillhaeyoung/Study/elasticSearch/프레젠테이션1.jpg)
+![클러스터 구조](https://user-images.githubusercontent.com/47243329/198865403-7bb59be9-cac8-4f5b-bdea-437ee878c7b1.jpg)
 
 
 
