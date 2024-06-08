@@ -1,19 +1,19 @@
 ---
 layout: post
-title: "Intro"
+title: "About"
 author: "gill"
 permalink: /about/
 ---
 
-### &#128515; 사용 언어 &#128515;
-<br/>
--  JAVA
--  C
--  NodeJs
--  JavaScript
-<br/>
-<br/>
-------------------------------------------------------------------------
-<br/>
-<br/>
-AWS에 대한 흥미를 갖고 있는 개발자입니다.
+## 📝 **Used Tool & Skill**
+
+**Tool**
+
+`Git` `Github` `GitLab` `Bitbucket` `Jira` `Confluence` 
+
+**Skill**
+
+`java` `SpringBoot` `JPA` `MySQL` `K8S`  `Docker` `AWS`
+
+
+## 은퇴하기 하루 전까지 멋진 개발자로 남고 싶어서 공부하는 사람
